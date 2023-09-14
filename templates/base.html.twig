@@ -1,0 +1,33 @@
+<!-- commentaire en twig -->
+{# Commentaire en twig #}
+{# base.html.twig est un gabarit#}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+
+
+{# pour heriter du contenu du parent dans tout les templates il faudra generalement declarer le contenu a l'exterieur des blocs declaré {% %}#}
+
+        <h2>Je suis déclarer dans le gabarit parent a l'exterieur du bloc body</h2>
+
+
+        {% block body %}
+            <h1>Bienvenu dans twig, je suis codé dans le block body</h1>
+
+            {% block monH3 %}
+                <h3>Je suis un h3</h3>
+                {% endblock %}
+                
+        {% endblock %}
+    </body>
+</html>
